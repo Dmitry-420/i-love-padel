@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+import { services } from '../data/club';
+
+const heroImage = '/media/projects/11839/cfgbwfUPF.webp';
+---
+
+<section id="top" class="relative isolate overflow-hidden border-b border-ink-line">
+  <img
+    src={heroImage}
+    alt="Зал падел-клуба: корты со стеклянными ограждениями в тёмном помещении с подсветкой"
+    class="absolute inset-0 -z-10 h-full w-full object-cover opacity-45"
+    width="1600" height="900" loading="eager"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/40"></div>
+  <div class="mx-auto max-w-7xl px-5 pb-20 pt-16 sm:pt-24 lg:pb-28 lg:pt-32">
+    <p class="eyebrow text-lime">Падел-клуб · корты, тренеры, лиги</p>
+    <h1 class="display-xl mt-6 max-w-4xl text-4xl sm:text-6xl lg:text-7xl">
+      Играй в падел<br />
+      <span class="text-lime">ближе к делу</span>
+    </h1>
+    <p class="mt-7 max-w-xl text-base text-bone-dim sm:text-lg">
+      Корты сутками, тренеры для новичков и игроков, любительские лиги, прокат инвентаря и зона отдыха —
+      всё для одного вечера в клубе.
+    </p>
+    <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+      <a href="#booking" class="btn-lime">
+        Записаться на корт
+        <Icon name="lucide:arrow-right" class="h-5 w-5" />
+      </a>
+      <a href="#services" class="btn-ghost">Смотреть услуги</a>
+    </div>
+    <dl class="mt-14 grid max-w-2xl grid-cols-1 gap-px overflow-hidden border border-ink-line bg-ink-line sm:grid-cols-3">
+      <div class="bg-ink/80 px-5 py-4">
+        <dt class="eyebrow text-bone-dim">Формат</dt>
+        <dd class="mt-1 text-sm text-bone">Пары и четвёрки</dd>
+      </div>
+      <div class="bg-ink/80 px-5 py-4">
+        <dt class="eyebrow text-bone-dim">Запись</dt>
+        <dd class="mt-1 text-sm text-bone">Заявка с сайта</dd>
+      </div>
+      <div class="bg-ink/80 px-5 py-4">
+        <dt class="eyebrow text-bone-dim">Инвентарь</dt>
+        <dd class="mt-1 text-sm text-bone">Прокат на месте</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="overflow-hidden border-b border-ink-line bg-lime py-3" aria-hidden="true">
+  <div class="marquee flex w-max gap-8">
+    {[...services, ...services].map((item) => (
+      <span class="display-xl flex items-center gap-8 text-sm text-ink">
+        {item.title}
+        <Icon name="lucide:circle" class="h-2.5 w-2.5" />
+      </span>
+    ))}
+  </div>
+</section>
+
+<style>
+  .marquee { animation: scroll-line 34s linear infinite; }
+  @keyframes scroll-line { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
+</style>

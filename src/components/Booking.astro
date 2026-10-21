@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+import BookingForm from './BookingForm.vue';
+import { services } from '../data/club';
+---
+
+<section id="booking" class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="grid gap-10 border border-ink-line bg-ink-soft p-7 lg:grid-cols-[0.9fr_1.1fr] lg:p-12">
+      <div>
+        <p class="eyebrow text-lime">Заявка</p>
+        <h2 class="display-xl mt-4 text-3xl sm:text-4xl">Забронируйте корт</h2>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-bone-dim">
+          Оставьте имя, телефон и удобное время — перезвоним, подберём корт и формат игры.
+        </p>
+        <ul class="mt-8 flex flex-col gap-3 text-sm text-bone-dim">
+          <li class="flex items-center gap-3">
+            <Icon name="lucide:clock" class="h-4 w-4 text-lime" />
+            Отвечаем по заявке, а не по скрипту
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="lucide:shirt" class="h-4 w-4 text-lime" />
+            Инвентарь выдадим на месте
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="lucide:users" class="h-4 w-4 text-lime" />
+            Подберём формат под ваш уровень
+          </li>
+        </ul>
+      </div>
+      <div class="lg:pl-6">
+        <BookingForm client:visible services={services.map((item) => item.title)} />
+      </div>
+    </div>
+  </div>
+</section>

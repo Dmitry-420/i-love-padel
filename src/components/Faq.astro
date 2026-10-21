@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components';
+import { faq } from '../data/club';
+---
+
+<section id="faq" class="border-b border-ink-line py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="eyebrow text-lime">Вопросы</p>
+        <h2 class="display-xl mt-4 text-3xl sm:text-4xl">Что спрашивают чаще всего</h2>
+        <p class="mt-5 max-w-sm text-sm text-bone-dim">
+          Если ответа нет — напишите в форме ниже, ответим по существу.
+        </p>
+        <a href="#booking" class="btn-ghost mt-8">
+          Задать вопрос
+          <Icon name="lucide:arrow-right" class="h-5 w-5" />
+        </a>
+      </div>
+      <ul class="flex flex-col">
+        {faq.map((item) => (
+          <li class="border-t border-ink-line py-6 last:border-b">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-start justify-between gap-6 text-lg text-bone">
+                <span>{item.q}</span>
+                <Icon name="lucide:plus" class="mt-1 h-5 w-5 shrink-0 text-lime transition-transform group-open:rotate-45" />
+              </summary>
+              <p class="mt-4 max-w-xl text-sm leading-relaxed text-bone-dim">{item.a}</p>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

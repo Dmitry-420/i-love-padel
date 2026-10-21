@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+import { steps } from '../data/club';
+---
+
+<section id="how" class="border-b border-ink-line bg-ink-soft py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <p class="eyebrow text-lime">Как проходит</p>
+    <h2 class="display-xl mt-4 max-w-3xl text-3xl sm:text-5xl">Три шага от заявки до матча</h2>
+    <ol class="mt-12 grid gap-8 md:grid-cols-3">
+      {steps.map((step) => (
+        <li class="border-t-2 border-lime pt-6">
+          <span class="display-xl block text-4xl text-lime">{step.num}</span>
+          <h3 class="mt-4 text-xl text-bone">{step.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-bone-dim">{step.text}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="mt-12 flex flex-col gap-4 border border-ink-line bg-ink p-7 sm:flex-row sm:items-center sm:justify-between lg:p-9">
+      <p class="max-w-md text-sm text-bone-dim">
+        Не знаете, какой формат выбрать? Напишите в заявке — подскажем, с чего начать именно вам.
+      </p>
+      <a href="#booking" class="btn-lime shrink-0">
+        Оставить заявку
+        <Icon name="lucide:arrow-right" class="h-5 w-5" />
+      </a>
+    </div>
+  </div>
+</section>

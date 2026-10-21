@@ -1,0 +1,46 @@
+---
+import { Icon } from 'astro-icon/components';
+import { tariffs } from '../data/club';
+---
+
+<section id="tariffs" class="border-b border-ink-line py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="eyebrow text-lime">Тарифы</p>
+        <h2 class="display-xl mt-4 max-w-2xl text-3xl sm:text-5xl">Форматы бронирования</h2>
+      </div>
+      <p class="max-w-sm text-sm text-bone-dim">
+        Цены пока не опубликованы — на их месте заглушка. Как только клуб откроет расписание, сюда встанут реальные суммы.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-6 lg:grid-cols-3">
+      {tariffs.map((tariff) => (
+        <article
+          class:list={[
+            'flex flex-col border p-8 lg:p-9',
+            tariff.featured ? 'border-lime bg-lime text-ink' : 'border-ink-line bg-ink text-bone'
+          ]}
+        >
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-xl">{tariff.title}</h3>
+            {tariff.featured && <span class="eyebrow">популярный</span>}
+          </div>
+          <p class:list={['display-xl mt-8 text-5xl', tariff.featured ? 'text-ink' : 'text-bone-dim']}>{tariff.price}</p>
+          <p class:list={['mt-2 text-xs', tariff.featured ? 'text-ink/70' : 'text-bone-dim']}>{tariff.note}</p>
+          <ul class="mt-8 flex flex-col gap-3 border-t border-current/20 pt-6">
+            {tariff.items.map((item) => (
+              <li class="flex items-start gap-3 text-sm">
+                <Icon name="lucide:check" class:list={['mt-0.5 h-4 w-4 shrink-0', tariff.featured ? 'text-ink' : 'text-lime']} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a href="#booking" class:list={['mt-8', tariff.featured ? 'btn-ghost !border-ink !text-ink hover:!text-ink' : 'btn-ghost']}>
+            Выбрать формат
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+@import '@fontsource-variable/unbounded';
+@import '@fontsource-variable/golos-text';
+@import "tailwindcss";
+@source "../";
+
+@theme {
+  --color-ink: #0e1214;
+  --color-ink-soft: #1a2124;
+  --color-ink-line: #2a3336;
+  --color-bone: #f4f1ea;
+  --color-bone-dim: #a8b0ad;
+  --color-lime: #ccff33;
+  --color-clay: #e2683f;
+  --font-display: 'Unbounded Variable', system-ui, sans-serif;
+  --font-body: 'Golos Text Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+  ::selection { background-color: var(--color-lime); color: var(--color-ink); }
+}
+
+@layer components {
+  .display-xl {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .btn-lime {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.6rem;
+    background-color: var(--color-lime); color: var(--color-ink);
+    font-family: var(--font-display); font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 1rem 1.75rem;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-lime:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(204,255,51,.7); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.6rem;
+    border: 1px solid var(--color-ink-line); color: var(--color-bone);
+    font-family: var(--font-display); font-weight: 600;
+    padding: 1rem 1.75rem;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .btn-ghost:hover { border-color: var(--color-lime); color: var(--color-lime); }
+}

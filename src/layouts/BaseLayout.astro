@@ -1,0 +1,62 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image = '/media/projects/11839/cfgbwfUPF.webp' } = Astro.props;
+const siteUrl = 'https://kortvey-padel-94v0g3oj.bobr0.site';
+const canonical = new URL(
+  Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/',
+  siteUrl
+).href;
+const ogImage = new URL(image, siteUrl).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsActivityLocation',
+  name: 'Падел-клуб «Кортвейв»',
+  url: canonical,
+  image: ogImage,
+  description,
+  sport: 'Padel',
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Аренда кортов', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Тренировки с тренером', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Любительские лиги и турниры', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Прокат инвентаря', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Зона отдыха и кафе', value: true }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Падел-клуб «Кортвейв»" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

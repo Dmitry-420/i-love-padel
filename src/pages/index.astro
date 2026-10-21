@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Steps from '../components/Steps.astro';
+import Pricing from '../components/Pricing.astro';
+import Gallery from '../components/Gallery.astro';
+import Faq from '../components/Faq.astro';
+import Booking from '../components/Booking.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Падел-клуб «Кортвейв» — аренда кортов, тренировки и турниры"
+  description="Падел-клуб «Кортвейв»: аренда кортов и абонементы, тренировки с тренером, любительские лиги и турниры, прокат инвентаря и зона отдыха. Записывайтесь на игру."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <Steps />
+    <Pricing />
+    <Gallery />
+    <Faq />
+    <Booking />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kortvey-padel-94v0g3oj.bobr0.site/sitemap.xml

@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components';
+import { club } from '../data/club';
+---
+
+<footer class="border-t border-ink-line bg-ink-soft py-14">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div>
+        <p class="display-xl text-2xl">Кортвейв</p>
+        <p class="eyebrow mt-2 text-lime">padel club</p>
+        <p class="mt-5 max-w-xs text-sm text-bone-dim">
+          Корты, тренеры, любительские лиги и зона отдыха в одном клубе.
+        </p>
+      </div>
+      <div>
+        <p class="eyebrow text-bone-dim">Разделы</p>
+        <ul class="mt-4 flex flex-col gap-3 text-sm">
+          <li><a href="#services" class="text-bone-dim transition-colors hover:text-lime">Услуги</a></li>
+          <li><a href="#how"     class="text-bone-dim transition-colors hover:text-lime">Как проходит</a></li>
+          <li><a href="#tariffs" class="text-bone-dim transition-colors hover:text-lime">Тарифы</a></li>
+          <li><a href="#faq"     class="text-bone-dim transition-colors hover:text-lime">Вопросы</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow text-bone-dim">Связь</p>
+        <ul class="mt-4 flex flex-col gap-3 text-sm">
+          <li>
+            <a href={`tel:${club.phone.replace(/[^\+\d]/g, '')}`}
+               class="inline-flex items-center gap-2 text-bone transition-colors hover:text-lime">
+              <Icon name="lucide:phone" class="h-4 w-4 text-lime" />
+              {club.phone}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${club.email}`}
+               class="inline-flex items-center gap-2 text-bone transition-colors hover:text-lime">
+              <Icon name="lucide:mail" class="h-4 w-4 text-lime" />
+              {club.email}
+            </a>
+          </li>
+          <li class="flex items-center gap-2 text-bone-dim">
+            <Icon name="lucide:map-pin" class="h-4 w-4 text-lime" />
+            Город и адрес — уточняются
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-3 border-t border-ink-line pt-6 text-xs text-bone-dim sm:flex-row sm:items-center sm:justify-between">
+      <p>© {new Date().getFullYear()} Падел-клуб «Кортвейв»</p>
+      <p class="flex items-center gap-2">
+        <Icon name="lucide:info" class="h-4 w-4 text-lime" />
+        Название, контакты и цены пока условные — заменяются на ваши
+      </p>
+    </div>
+  </div>
+</footer>
