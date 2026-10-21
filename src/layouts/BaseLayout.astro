@@ -8,8 +8,9 @@ interface Props {
   image?: string;
 }
 
-const { title, description, image = '/media/projects/11839/cfgbwfUPF.webp' } = Astro.props;
-const siteUrl = 'https://kortvey-padel-94v0g3oj.bobr0.site';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { title, description, image = `${base}/media/projects/11839/cfgbwfUPF.webp` } = Astro.props;
+const siteUrl = 'https://Dmitry-420.github.io';
 const canonical = new URL(
   Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/',
   siteUrl
@@ -43,7 +44,7 @@ const jsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Падел-клуб «Кортвейв»" />
+    <meta property="og:site_name" content="РџР°РґРµР»-РєР»СѓР± В«РљРѕСЂС‚РІРµР№РІВ»" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

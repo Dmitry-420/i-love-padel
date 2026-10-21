@@ -2,46 +2,47 @@
 import { Icon } from 'astro-icon/components';
 import { services } from '../data/club';
 
-const heroImage = '/media/projects/11839/cfgbwfUPF.webp';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const heroImage = `${base}/media/projects/11839/cfgbwfUPF.webp`;
 ---
 
 <section id="top" class="relative isolate overflow-hidden border-b border-ink-line">
   <img
     src={heroImage}
-    alt="Зал падел-клуба: корты со стеклянными ограждениями в тёмном помещении с подсветкой"
+    alt="Р вЂ”Р В°Р В» Р С—Р В°Р Т‘Р ВµР В»-Р С”Р В»РЎС“Р В±Р В°: Р С”Р С•РЎР‚РЎвЂљРЎвЂ№ РЎРѓР С• РЎРѓРЎвЂљР ВµР С”Р В»РЎРЏР Р…Р Р…РЎвЂ№Р СР С‘ Р С•Р С–РЎР‚Р В°Р В¶Р Т‘Р ВµР Р…Р С‘РЎРЏР СР С‘ Р Р† РЎвЂљРЎвЂР СР Р…Р С•Р С Р С—Р С•Р СР ВµРЎвЂ°Р ВµР Р…Р С‘Р С‘ РЎРѓ Р С—Р С•Р Т‘РЎРѓР Р†Р ВµРЎвЂљР С”Р С•Р в„–"
     class="absolute inset-0 -z-10 h-full w-full object-cover opacity-45"
     width="1600" height="900" loading="eager"
   />
   <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/40"></div>
   <div class="mx-auto max-w-7xl px-5 pb-20 pt-16 sm:pt-24 lg:pb-28 lg:pt-32">
-    <p class="eyebrow text-lime">Падел-клуб · корты, тренеры, лиги</p>
+    <p class="eyebrow text-lime">Р СџР В°Р Т‘Р ВµР В»-Р С”Р В»РЎС“Р В± Р’В· Р С”Р С•РЎР‚РЎвЂљРЎвЂ№, РЎвЂљРЎР‚Р ВµР Р…Р ВµРЎР‚РЎвЂ№, Р В»Р С‘Р С–Р С‘</p>
     <h1 class="display-xl mt-6 max-w-4xl text-4xl sm:text-6xl lg:text-7xl">
-      Играй в падел<br />
-      <span class="text-lime">ближе к делу</span>
+      Р ВР С–РЎР‚Р В°Р в„– Р Р† Р С—Р В°Р Т‘Р ВµР В»<br />
+      <span class="text-lime">Р В±Р В»Р С‘Р В¶Р Вµ Р С” Р Т‘Р ВµР В»РЎС“</span>
     </h1>
     <p class="mt-7 max-w-xl text-base text-bone-dim sm:text-lg">
-      Корты сутками, тренеры для новичков и игроков, любительские лиги, прокат инвентаря и зона отдыха —
-      всё для одного вечера в клубе.
+      Р С™Р С•РЎР‚РЎвЂљРЎвЂ№ РЎРѓРЎС“РЎвЂљР С”Р В°Р СР С‘, РЎвЂљРЎР‚Р ВµР Р…Р ВµРЎР‚РЎвЂ№ Р Т‘Р В»РЎРЏ Р Р…Р С•Р Р†Р С‘РЎвЂЎР С”Р С•Р Р† Р С‘ Р С‘Р С–РЎР‚Р С•Р С”Р С•Р Р†, Р В»РЎР‹Р В±Р С‘РЎвЂљР ВµР В»РЎРЉРЎРѓР С”Р С‘Р Вµ Р В»Р С‘Р С–Р С‘, Р С—РЎР‚Р С•Р С”Р В°РЎвЂљ Р С‘Р Р…Р Р†Р ВµР Р…РЎвЂљР В°РЎР‚РЎРЏ Р С‘ Р В·Р С•Р Р…Р В° Р С•РЎвЂљР Т‘РЎвЂ№РЎвЂ¦Р В° РІР‚вЂќ
+      Р Р†РЎРѓРЎвЂ Р Т‘Р В»РЎРЏ Р С•Р Т‘Р Р…Р С•Р С–Р С• Р Р†Р ВµРЎвЂЎР ВµРЎР‚Р В° Р Р† Р С”Р В»РЎС“Р В±Р Вµ.
     </p>
     <div class="mt-9 flex flex-col gap-3 sm:flex-row">
       <a href="#booking" class="btn-lime">
-        Записаться на корт
+        Р вЂ”Р В°Р С—Р С‘РЎРѓР В°РЎвЂљРЎРЉРЎРѓРЎРЏ Р Р…Р В° Р С”Р С•РЎР‚РЎвЂљ
         <Icon name="lucide:arrow-right" class="h-5 w-5" />
       </a>
-      <a href="#services" class="btn-ghost">Смотреть услуги</a>
+      <a href="#services" class="btn-ghost">Р РЋР СР С•РЎвЂљРЎР‚Р ВµРЎвЂљРЎРЉ РЎС“РЎРѓР В»РЎС“Р С–Р С‘</a>
     </div>
     <dl class="mt-14 grid max-w-2xl grid-cols-1 gap-px overflow-hidden border border-ink-line bg-ink-line sm:grid-cols-3">
       <div class="bg-ink/80 px-5 py-4">
-        <dt class="eyebrow text-bone-dim">Формат</dt>
-        <dd class="mt-1 text-sm text-bone">Пары и четвёрки</dd>
+        <dt class="eyebrow text-bone-dim">Р В¤Р С•РЎР‚Р СР В°РЎвЂљ</dt>
+        <dd class="mt-1 text-sm text-bone">Р СџР В°РЎР‚РЎвЂ№ Р С‘ РЎвЂЎР ВµРЎвЂљР Р†РЎвЂРЎР‚Р С”Р С‘</dd>
       </div>
       <div class="bg-ink/80 px-5 py-4">
-        <dt class="eyebrow text-bone-dim">Запись</dt>
-        <dd class="mt-1 text-sm text-bone">Заявка с сайта</dd>
+        <dt class="eyebrow text-bone-dim">Р вЂ”Р В°Р С—Р С‘РЎРѓРЎРЉ</dt>
+        <dd class="mt-1 text-sm text-bone">Р вЂ”Р В°РЎРЏР Р†Р С”Р В° РЎРѓ РЎРѓР В°Р в„–РЎвЂљР В°</dd>
       </div>
       <div class="bg-ink/80 px-5 py-4">
-        <dt class="eyebrow text-bone-dim">Инвентарь</dt>
-        <dd class="mt-1 text-sm text-bone">Прокат на месте</dd>
+        <dt class="eyebrow text-bone-dim">Р ВР Р…Р Р†Р ВµР Р…РЎвЂљР В°РЎР‚РЎРЉ</dt>
+        <dd class="mt-1 text-sm text-bone">Р СџРЎР‚Р С•Р С”Р В°РЎвЂљ Р Р…Р В° Р СР ВµРЎРѓРЎвЂљР Вµ</dd>
       </div>
     </dl>
   </div>
